@@ -1,0 +1,31 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Record DashBoard</title>
+</head>
+<body>
+	<h2 style="text-align: center;">Administrator Dashboard</h2>
+
+	<form action="/startWeatherProcess" method="POST" style="background-color: pink;  border: 2px solid blue; margin-right: 50%;border-radius: 8px; padding: 20px 0px 20px 20px;">
+		Enter your name : <input type="text" name="name"/>
+		<br/>
+		Pass Key : <input type="password" name="password" /><br/>
+		<button type="submit" value="Start Weather Processing">Start Weather Processing</button>
+
+	</form><br/>
+	<hr/>
+	<h3>Currently supported cities and states below</h3>
+	<h4>Cities</h4>
+	{% for s in states %}
+	<h3>State : {{s}} </h3>
+	<ol>
+		{% for city in cities %}
+		<li>{{city}} 
+		</li>
+		{% endfor %}
+	</ol>
+	{% endfor %} 
+
+</body>
+</html>
